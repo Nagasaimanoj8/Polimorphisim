@@ -4,29 +4,57 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Animal
+namespace shapes
 {
-    public class Animal
-    {
-        public virtual void eat()
-        {
-            Console.WriteLine("eating...");
-        }
-    }
-    public class Dog : Animal
-    {
-        public override void eat()
-        {
-            Console.WriteLine("eating bread...");
-        }
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
 
-    }
-    public class TestPolymorphism
+    namespace shapes
     {
-        public static void Main()
+        internal class Program
         {
-            Animal a = new Dog();
-            a.eat();
+
+            public class Shape
+            {
+                public virtual void draw()
+                {
+                    Console.WriteLine("drawing...");
+                }
+            }
+            public class Rectangle : Shape
+            {
+                public override void draw()
+                {
+                    Console.WriteLine("drawing rectangle...");
+                }
+
+            }
+            public class Circle : Shape
+            {
+                public override void draw()
+                {
+                    Console.WriteLine("drawing circle...");
+                }
+
+            }
+            public class TestPolymorphism
+            {
+                public static void Main()
+                {
+                    Shape s;
+                    s = new Shape();
+                    s.draw();
+                    s = new Rectangle();
+                    s.draw();
+                    s = new Circle();
+                    s.draw();
+
+                }
+            }
         }
     }
+
 }
